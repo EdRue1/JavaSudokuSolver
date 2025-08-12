@@ -67,7 +67,7 @@ public class SudokuSolver {
     }
 
     //Checks if the number is in the column that is being tested
-    private static boolean isNumberIColumn(int[][] board, int number, int column) {
+    private static boolean isNumberInColumn(int[][] board, int number, int column) {
         for (int i = 0; i < GRID_SIZE; i++) {
             if (board[i][column] == number) {
                 return true;
@@ -94,7 +94,7 @@ public class SudokuSolver {
     //This will check if the number is a valid placement
     private static boolean isValidPlacement(int[][] board, int number, int row, int column) {
         return !isNumberInRow(board, number, row) && 
-        !isNumberIColumn(board, number, column) && 
+        !isNumberInColumn(board, number, column) && 
         !isNumberInBox(board, number, row, column);
     }
 
